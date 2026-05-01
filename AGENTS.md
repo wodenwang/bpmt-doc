@@ -91,3 +91,19 @@
 - 梳理旧 GitBook 章节迁移矩阵。
 - 先完成 Quick Start、运行部署、数据库初始化、账号登录这几块当前用户最需要的文档。
 - 再逐步解读工作流、动态表、表单控件、脚本函数、权限体系等核心模块。
+
+## 当前实施计划
+
+已确认采用 Markdown-first 方案。设计文档：
+
+```text
+docs/superpowers/specs/2026-05-01-bpmt-doc-markdown-first-design.md
+```
+
+实施计划：
+
+```text
+docs/superpowers/plans/2026-05-01-bpmt-doc-markdown-first.md
+```
+
+首批实施范围是文档导航、当前 `bpmt-lite v1.3.0` 运行路径、迁移规则、迁移矩阵和五篇样板迁移文档。不要在首批引入 GitBook、VitePress、Docusaurus 或其他站点框架。
