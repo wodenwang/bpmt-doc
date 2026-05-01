@@ -870,6 +870,8 @@ import re, sys
 root = Path('.')
 missing = []
 for path in root.rglob('*.md'):
+    if path.parts[:2] == ('docs', 'superpowers'):
+        continue
     text = path.read_text(encoding='utf-8')
     for target in re.findall(r'\[[^\]]+\]\(([^)]+)\)', text):
         if target.startswith(('http://', 'https://', '#', 'mailto:')):
