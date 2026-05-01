@@ -51,7 +51,7 @@
 
 ## 旧 GitBook 初始目录
 
-旧文档位于 `/Users/wenzhewang/workspace/bpmt_project/运行时参考/gitbook`，当前可见结构包括：
+旧文档位于 `/Users/wenzhewang/workspace/bpmt_project/运行时参考/gitbook`。源目录可见结构包括：
 
 - 开始使用
 - 数据库设计
@@ -62,10 +62,10 @@
 - 控件开发
 - 用户权限
 - 其他设置
-- 安装部署
-- 最佳实践
+- 安装部署（当前输出已移除，仅 `10.5.其他工具.md` 迁入“其他设置”）
+- 最佳实践（当前输出已移除）
 
-迁移时不要机械搬运。应先标注旧文档状态，再用 `bpmt-lite` 当前代码和运行结果校准内容。
+迁移时不要机械搬运。当前用户文档应保持旧 GitBook 章节结构，不再保留额外迁移矩阵、样板目录或 front matter。
 
 ## 文档编写规则
 
@@ -73,7 +73,7 @@
 - 命令、路径、类名、配置键、镜像名、Maven 坐标保持原样。
 - 初学者路径优先：先给最短可运行步骤，再给维护者细节。
 - 涉及运行、安装、数据库、登录、Docker 的说明，必须与 `bpmt-lite` 当前版本一致。
-- 从旧 GitBook 迁移的内容必须标记“已校准”或“待校准”，不要让历史说明伪装成当前事实。
+- 迁移状态和范围记录在本文件中，不写入用户可读 Markdown 正文的 front matter。
 - 需要引用代码行为时，优先给出 `bpmt-lite` 中的实际文件路径和结论。
 
 ## 推荐工作流
@@ -92,18 +92,13 @@
 - 先完成 Quick Start、运行部署、数据库初始化、账号登录这几块当前用户最需要的文档。
 - 再逐步解读工作流、动态表、表单控件、脚本函数、权限体系等核心模块。
 
-## 当前实施计划
+## 当前迁移状态
 
-已确认采用 Markdown-first 方案。设计文档：
-
-```text
-docs/superpowers/specs/2026-05-01-bpmt-doc-markdown-first-design.md
-```
-
-实施计划：
-
-```text
-docs/superpowers/plans/2026-05-01-bpmt-doc-markdown-first.md
-```
-
-首批实施范围是文档导航、当前 `bpmt-lite v1.3.0` 运行路径、迁移规则、迁移矩阵和五篇样板迁移文档。不要在首批引入 GitBook、VitePress、Docusaurus 或其他站点框架。
+- 旧 GitBook 主动源：`/Users/wenzhewang/workspace/bpmt_project/运行时参考/gitbook`
+- 已迁移目录：`docs/`
+- 完整目录：`docs/SUMMARY.md`
+- 图片目录：`docs/assets/gitbook/`
+- 当前有效迁移范围：`安装部署` 与 `最佳实践` 两章已从迁移输出中移除；原 `安装部署/其他工具` 内容迁入 `docs/9.其他设置/9.4.其他工具.md`。
+- 当前迁移覆盖：78 个 Markdown 文件、329 个图片资产。
+- 运行事实校准页：`docs/1.开始使用/1.1.快速安装.md`。
+- 后续校准优先级：脚本函数实现、控件实现、动态表/工作流 UI、微信开发能力。
