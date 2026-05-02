@@ -35,25 +35,25 @@
 | change() | 无 | 设置控件事件回调函数.控件触发change时调用<br>调用示例:<br>`Widget.change($form,name,function($this){alert($this.val());});`|
 
 ## 示例
-###1.combo控件通过“自定义控件”菜单可以配置，如下图 :
+### 1.combo控件通过“自定义控件”菜单可以配置，如下图 :
 
 ![](../../assets/gitbook/7.控件开发/7.2.自定义控件/7.1_combo_demo1.png)
 
-###2.通过在tab[基础设置]中选择主SQL类型和填写主SQL(脚本), 如下图 :
+### 2.通过在tab[基础设置]中选择主SQL类型和填写主SQL(脚本), 如下图 :
 在主SQL(脚本)中输入
 ```sql
 select * from [TABLE_NAME] where 1=1
 ```
 ![](../../assets/gitbook/7.控件开发/7.2.自定义控件/7.1_combo_demo2.png)
 
-###3.在tab[数据字段]中新增展示字段, 增加需要展示的字段并填写展示内容(脚本内容), 如下图 :
+### 3.在tab[数据字段]中新增展示字段, 增加需要展示的字段并填写展示内容(脚本内容), 如下图 :
 填写展示名后, 在展示内容(脚本内容)中填写对应的VO字段, 并可做翻译
 ```groovy
 return vo?.BUSI_NAME;
 ```
 ![](../../assets/gitbook/7.控件开发/7.2.自定义控件/7.1_combo_demo3.png)
 
-###4.最后在tab[扩展设置]中, 控件类型选择选择控件(即combo控件), CODE设置填写CODE(脚本), NAME设置填写NAME(脚本), 翻译设置SQL片段(脚本类型)
+### 4.最后在tab[扩展设置]中, 控件类型选择选择控件(即combo控件), CODE设置填写CODE(脚本), NAME设置填写NAME(脚本), 翻译设置SQL片段(脚本类型)
 CODE(脚本):选择后返回的唯一标识
 ```groovy
 vo.[COLUMN_NAME]

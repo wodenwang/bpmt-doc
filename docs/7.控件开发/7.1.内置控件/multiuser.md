@@ -1,7 +1,7 @@
 # multiuser 用户多选框
 可同时选择多个系统用户的控件。
 
-###示例：
+### 示例：
 ![](../../assets/gitbook/7.控件开发/7.1.内置控件/7.1.multiuser1.png)
 <br/>
 ![](../../assets/gitbook/7.控件开发/7.1.内置控件/7.1.multiuser2.png)

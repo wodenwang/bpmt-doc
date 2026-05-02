@@ -31,9 +31,9 @@
 
 
 fmt函数库提供各类属性格式化以及转换的函数。
-##formatDatetime
+## formatDatetime
 根据自定义规则格式化日期/时间。
-#### 参数API ####
+#### 参数API
 | 序号 | 参数类型 | 说明  |
 | --- | --- | --- |
 | 1		| 日期 	| 日期对象，一般为从数据库中查询到的某个值，或BPM-Table的内置对象now。 |
@@ -45,9 +45,9 @@ return fmt.formatDatetime(now,'yyyy-MM-dd HH:mm:ss.SSS');
 ```
 ![](../../assets/gitbook/6.脚本开发/6.2.内置函数/fmt_formatDatetime_1.png)
 
-##formatDate/formatDatetime
+## formatDate/formatDatetime
 根据ISO标准格式化日期/时间。
-#### 参数API ####
+#### 参数API
 | 序号 | 参数类型 | 说明  |
 | --- | --- | --- |
 | 1		| 日期 	| 日期对象，一般为从数据库中查询到的某个值，或BPM-Table的内置对象now。 |
@@ -57,9 +57,9 @@ return fmt.formatDatetime(now,'yyyy-MM-dd HH:mm:ss.SSS');
 return fmt.formatDate(now) +'<br>'+ fmt.formatDatetime(now);
 ```
 ![](../../assets/gitbook/6.脚本开发/6.2.内置函数/fmt_formatDate_1.png)
-##formatPrice
+## formatPrice
 根据自定义规则格式化金额。
-#### 参数API ####
+#### 参数API
 | 序号 | 参数类型 | 说明  |
 | --- | --- | --- |
 | 1		| 数字 	| 金额对象，可以为整数或复数。 |
@@ -70,9 +70,9 @@ return fmt.formatDate(now) +'<br>'+ fmt.formatDatetime(now);
 return fmt.formatPrice(112345.6789) +'<br>'+ fmt.formatPrice(9876.54321,'#,##0.00000000');
 ```
 ![](../../assets/gitbook/6.脚本开发/6.2.内置函数/fmt_formatPrice_1.png)
-##formatChinesePrice
+## formatChinesePrice
 格式化中文价格（将金额转换成中文大写）。
-#### 参数API ####
+#### 参数API
 | 序号 | 参数类型 | 说明  |
 | --- | --- | --- |
 | 1		| 数字 	| 金额对象，可以为整数或复数。 |
@@ -82,9 +82,9 @@ return fmt.formatPrice(112345.6789) +'<br>'+ fmt.formatPrice(9876.54321,'#,##0.0
 return fmt.formatChinesePrice(112345.6789);
 ```
 ![](../../assets/gitbook/6.脚本开发/6.2.内置函数/fmt_formatChinesePrice_1.png)
-##formatPinyin/formatPinyinFull
+## formatPinyin/formatPinyinFull
 格式化中文为拼音。
-#### 参数API ####
+#### 参数API
 | 序号 | 参数类型 | 说明  |
 | --- | --- | --- |
 | 1		| 字符 	| 中文字符。 |
@@ -99,9 +99,9 @@ return fmt.formatPinyin('测试123AB继续');
 return fmt.formatPinyinFull('测试123AB继续');
 ```
 ![](../../assets/gitbook/6.脚本开发/6.2.内置函数/fmt_formatPinyinFull_1.png)
-##formatPercent
+## formatPercent
 格式化百分比。
-#### 参数API ####
+#### 参数API
 | 序号 | 参数类型 | 说明  |
 | --- | --- | --- |
 | 1		| 数字 	| 可以是整数或复数。 |
@@ -111,9 +111,9 @@ return fmt.formatPinyinFull('测试123AB继续');
 return fmt.formatPercent(0.56);
 ```
 ![](../../assets/gitbook/6.脚本开发/6.2.内置函数/fmt_formatPercent_1.png)
-##formatNumber
+## formatNumber
 根据自定义规则格式化数字。
-#### 参数API ####
+#### 参数API
 | 序号 | 参数类型 | 说明  |
 | --- | --- | --- |
 | 1		| 数字 	| 可以是整数或复数。 |
@@ -131,9 +131,9 @@ return fmt.formatNumber(51441.14141,'00000.000 ');
 ```
 可以看出未指定格式则默认保留小数点后2位
 ![](../../assets/gitbook/6.脚本开发/6.2.内置函数/fmt_formatNumber_2.png)
-##formatJson
+## formatJson
 将对象转换为Json类型。
-#### 参数API ####
+#### 参数API
 | 序号 | 参数类型 | 说明  |
 | --- | --- | --- |
 | 1		| object 	| 对象，可以是一条vo,也可以是BPMT内置对象。 |
@@ -143,9 +143,9 @@ return fmt.formatNumber(51441.14141,'00000.000 ');
 return fmt.formatJson(user.user);
 ```
 ![](../../assets/gitbook/6.脚本开发/6.2.内置函数/fmt_formatJson_1.png)
-##formatDuring
+## formatDuring
 将秒数转换成2段式的时间。
-#### 参数API ####
+#### 参数API
 | 序号 | 参数类型 | 说明  |
 | --- | --- | --- |
 | 1		| 数字 	| 长整型秒数。 |
@@ -157,9 +157,9 @@ return fmt.formatDuring(111)+'<br>'+
   fmt.formatDuring(1111111);
 ```
 ![](../../assets/gitbook/6.脚本开发/6.2.内置函数/fmt_formatDuring_1.png)
-##toJson
+## toJson
 将字符串转换成Json类型。
-#### 参数API ####
+#### 参数API
 | 序号 | 参数类型 | 说明  |
 | --- | --- | --- |
 | 1		| 字符串 	| 以string:value形式，中间用逗号隔开。 |
@@ -169,9 +169,9 @@ return fmt.formatDuring(111)+'<br>'+
 return fmt.toJson('a':1,'b':1.0,'c':'d','e':null);
 ```
 ![](../../assets/gitbook/6.脚本开发/6.2.内置函数/fmt_toJson_1.png)
-##toDate
+## toDate
 将字符串转换为日期类型。
-#### 参数API ####
+#### 参数API
 | 序号 | 参数类型 | 说明  |
 | --- | --- | --- |
 | 1		| 字符 	| 日期字符串。以yyyy-MM-dd HH:mm:ss形式。 |
@@ -181,9 +181,9 @@ return fmt.toJson('a':1,'b':1.0,'c':'d','e':null);
 return fmt.toDate('2016-02-01');
 ```
 ![](../../assets/gitbook/6.脚本开发/6.2.内置函数/fmt_toDate_1.png)
-##toNumber
+## toNumber
 将字符串转换为数字类型。
-#### 参数API ####
+#### 参数API
 | 序号 | 参数类型 | 说明  |
 | --- | --- | --- |
 | 1		| 字符串 	| 数字字符串。 |
