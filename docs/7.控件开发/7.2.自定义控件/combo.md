@@ -13,13 +13,13 @@
 ### 固定参数 API
 
 | 序号 | 类型 | 描述 |
-| :--: | :--: | :-- |
+| --- | --- | --- |
 | 1 | 必填 | 自定义控件配置KEY |
 
 ### 动态参数 API
 
 | 名称 | 类型 | 描述 |
-| :--: | :--: | :-- |
+| --- | --- | --- |
 | orderBy | string | 排序SQL片段 |
 | pageLimit | number | 每页记录数 |
 | ? | ? | 任意自定义参数均可以在控件中的处理器通过cm.params()函数调用 |
@@ -27,7 +27,7 @@
 ### 页面JS API
 
 | 名称 | 参数说明 | 描述 |
-| :--: | :-- | :-- |
+| --- | --- | --- |
 | init() |  无 | 将控件设置为初始化状态.<br>调用示例: <br> 	`Widget.init($form,name);`|
 | enabled(flag) | flag:true:可用默认值;false:不可用 | 将控件设置为可用/不可用(disabled)状态.<br>调用示例:<br>`Widget.enabled($form,name); `|
 | disabled() | 无 | 将控件设置为不可用状态<br> 调用示例: <br>`Widget.disabled($form,name);`|

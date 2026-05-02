@@ -34,7 +34,7 @@
 ```
 #### 参数API ####
 | 序号 | 参数类型 | 说明  |
-|:--:|:--:|:--|
+| --- | --- | --- |
 |1| 字符串 	| SQL串（可用问号代替入参）。 |
 | 2...N		| 无限制 	| 问号替换参数（比如`db.find("select * from BS_CUSTOMER where CUSTOMER_ID = ? and ADDRESS like ?", "CUS001", "%11号%");`）。 |
 |返回值  | 对象 	  |对象Map|
@@ -58,7 +58,7 @@ db.find("select * from BS_CUSTOMER where CUSTOMER_ID = ?", "CUS001");
 ```
 #### 参数API ####
 | 序号 | 参数类型 | 说明  |
-|:--:|:--:|:--|
+| --- | --- | --- |
 |1| 字符串 	| SQL串（可用问号代替入参）。 |
 | 2...N		| 无限制 	| 问号替换参数（比如`db.query("select * from BS_CUSTOMER where ADDRESS like ?", "%广州%");`）。 |
 |返回值  | 列表 	  |对象列表|
@@ -80,7 +80,7 @@ db.query("select * from BS_CUSTOMER where BUSI_NAME like ?", "%广州%");
 ```
 #### 参数API ####
 | 序号 | 参数类型 | 说明  |
-|:--:|:--:|:--|
+| --- | --- | --- |
 |1| 字符串 	| SQL串（可用问号代替入参）。 |
 | 2...N		| 无限制 	| 参考db.find和db.query |
 |返回值  | 无 	  |无|
@@ -107,7 +107,7 @@ db.exec("insert into BS_CUSTOMER (CUSTOMER_ID, BUSI_NAME, ADDRESS, CREATE_OPR, C
 ```
 #### 参数API ####
 | 序号 | 参数类型 | 说明  |
-|:--:|:--:|:--|
+| --- | --- | --- |
 | 1 | 字符串	| 表名。 |
 | 2	| 字符串	| 表主键字段值。 |
 |返回值  | 对象 |对象Map。|
@@ -125,7 +125,7 @@ def vo = db.findByPk("BS_CUSTOMER", "CUS001");
 ```
 #### 参数API ####
 | 序号 | 参数类型 | 说明  |
-|:--:|:--:|:--|
+| --- | --- | --- |
 | 1		| vo 	| value object值对象。 |
 |返回值  | 无 	  |无。|
 
