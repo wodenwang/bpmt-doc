@@ -1,4 +1,27 @@
 # orm 内建数据库(Hibernate)
+
+<!-- CODE-CALIBRATION:START -->
+
+## 当前代码校准
+
+来源：`bpmt-lite/platform/src/main/java/com/riversoft/platform/db/ORMHelper.java`，类上标注 `@ScriptSupport("orm")`。脚本中通常以 `orm.方法名(...)` 调用。
+
+面向 BPMT 内建 Hibernate 实体的 HQL 和实体操作函数。
+
+| 函数签名 | 说明 |
+| --- | --- |
+| `save(Object o)` | 增 |
+| `update(Object o)` | 改 |
+| `remove(Object o)` | 删 |
+| `removeByPk(String entityName, Serializable pk)` | 根据主键删 |
+| `findByPk(String entityName, Serializable pk)` | 根据主键查找 |
+| `find(String hql, Object... values)` | 根据HQL返回唯一值 |
+| `query(String hql, Object... values)` | 根据HQL返回列表 |
+| `exec(String hql, Object... values)` | 根据HQL执行 |
+
+<!-- CODE-CALIBRATION:END -->
+
+
 orm内建函数库，为操作BPMT内置系统表的函数库，区别于自建的动态表，动态表使用的是db函数库。
 
 ## orm.find ##

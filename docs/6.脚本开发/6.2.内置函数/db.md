@@ -1,4 +1,30 @@
 # db 通用函数库
+
+<!-- CODE-CALIBRATION:START -->
+
+## 当前代码校准
+
+来源：`bpmt-lite/platform/src/main/java/com/riversoft/platform/db/DbHelper.java`，类上标注 `@ScriptSupport("db")`。脚本中通常以 `db.方法名(...)` 调用。
+
+面向动态表和原生 SQL 的数据库函数。动态表对象通常需要 `$type$` 标识表名。
+
+| 函数签名 | 说明 |
+| --- | --- |
+| `save(Map<String, Object> vo)` | 保存动态表对象。 |
+| `update(Map<String, Object> vo)` | 更新动态表对象。 |
+| `saveOrUpdate(Map<String, Object> vo)` | 保存或更新动态表对象。 |
+| `delete(Map<String, Object> vo)` | 删除动态表对象。 |
+| `findByPk(String entityName, Serializable pk)` | 按表名和主键查询唯一记录。 |
+| `findByPk(Map<String, Object> vo)` | 按带 `$type$` 的动态表对象主键查询唯一记录。 |
+| `find(String sql, Object... args)` | 执行 SQL 并返回唯一记录。 |
+| `query(String sql, Object... args)` | 执行 SQL 并返回列表。 |
+| `exec(String sql, Map<String, Object> params)` | 用命名参数执行 SQL。 |
+| `exec(String sql, Object... args)` | 用位置参数执行 SQL。 |
+| `save(String sql, Object... args)` | 执行新增 SQL 并返回自动递增 ID。注意该重载与保存动态表对象的 `db.save(vo)` 同名。 |
+
+<!-- CODE-CALIBRATION:END -->
+
+
     db为常用数据库操作函数，主要用于数据库表的增删改查。
 
 ##db.find

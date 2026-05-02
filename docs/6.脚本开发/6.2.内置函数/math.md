@@ -1,4 +1,27 @@
 # math 数学操作
+
+<!-- CODE-CALIBRATION:START -->
+
+## 当前代码校准
+
+来源：`bpmt-lite/platform/src/main/java/com/riversoft/core/script/function/MathUtil.java`，类上标注 `@ScriptSupport("math")`。脚本中通常以 `math.方法名(...)` 调用。
+
+数字集合的汇总、平均、最大值和最小值。
+
+| 函数签名 | 说明 |
+| --- | --- |
+| `sum(Number... list)` | 汇总 |
+| `sum(List<?> list)` | 汇总 |
+| `avg(Number... list)` | 平均 |
+| `avg(List<?> list)` | 平均 |
+| `max(Number... list)` | 最大 |
+| `max(List<?> list)` | 最大 |
+| `min(Number... list)` | 最小 |
+| `min(List<?> list)` | 最大 |
+
+<!-- CODE-CALIBRATION:END -->
+
+
 BPMT中内建的一套对数字的数学操作函数,比如汇总,计算平均值等  
 
 ## *math.sum* 汇总

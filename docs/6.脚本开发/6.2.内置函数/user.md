@@ -1,5 +1,45 @@
 # user 用户与组织架构
 
+<!-- CODE-CALIBRATION:START -->
+
+## 当前代码校准
+
+来源：`bpmt-lite/platform/src/main/java/com/riversoft/platform/script/function/UserHelper.java`，类上标注 `@ScriptSupport("user")`。脚本中通常以 `user.方法名(...)` 调用。
+
+当前用户、组织、角色、用户查询、组织递归和权限判断函数。
+
+| 函数签名 | 说明 |
+| --- | --- |
+| `getUser()` | 获取当前用户 |
+| `getGroup()` | 获取当前组织 |
+| `getParentGroup(UsGroup group)` | 获取父组织 |
+| `getGroup(int level)` | 获取所属部门 上推层级 |
+| `getRole()` | 获取当前角色 |
+| `getUid()` | 获取当前用户主键 |
+| `getRoleKey()` | 获取当前角色主键 |
+| `getGroupKey()` | 获取当前组织主键 |
+| `listSubGroup(String groupKey)` | 获取组织及其所有子组织 |
+| `listSubGroupKey(String groupKey)` | 获取所有组织主键 |
+| `listUidByGroup(String groupKey)` | 获取组织下属所有员工ID |
+| `listUserByNameLike(String name)` | 通过名字模糊查询用户 |
+| `listUserByName(String name)` | 通过名字获取用户 |
+| `listUserByGroup(String groupKey)` | 获取组织下属所有员工 |
+| `listGroupByUser(String uid)` | 获取员工对应组织 |
+| `listRoleByUser(String uid)` | 获取员工对应角色 |
+| `getGroupByUser(String uid)` | 获取员工对应组织 |
+| `getRoleByUser(String uid)` | 获取员工对应组织 |
+| `checkSameGroup(String target, int level)` | 判断指定用户是否与当前用户同在一个组织 指定用户 上推层级 |
+| `checkSameGroup(String target)` | 判断指定用户是否与当前用户同在一个组织 指定用户 |
+| `findRole(String roleKey)` | 翻译角色 |
+| `findGroup(String groupKey)` | 翻译组织 |
+| `findUser(String uid)` | 翻译用户 |
+| `checkAdmin()` | 校验当前登录用户是否管理员 |
+| `lan()` | 返回当前用户所在的语言环境 |
+
+<!-- CODE-CALIBRATION:END -->
+
+
+
 BPMT中对于用户与组织专门配套的函数库,通过该函数库,可以对用户与组织进行一系列操作,例如"获取当前用户"、"获取当前组织"、"获取当前角色"等;
 
 ## *user.getUser* 获取当前用户

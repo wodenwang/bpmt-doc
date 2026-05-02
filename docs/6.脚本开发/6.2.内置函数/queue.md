@@ -1,5 +1,22 @@
 # queue 异步队列操作
 
+<!-- CODE-CALIBRATION:START -->
+
+## 当前代码校准
+
+来源：`bpmt-lite/platform/src/main/java/com/riversoft/platform/script/function/QueueHelper.java`，类上标注 `@ScriptSupport("queue")`。脚本中通常以 `queue.方法名(...)` 调用。
+
+把异步任务数据写入队列表。
+
+| 函数签名 | 说明 |
+| --- | --- |
+| `add(String queue, Map<String, Object> element)` | 增加一个element到队列中 |
+| `add(String queue, List<Map<String, Object>> elements)` | 增加一批element到队列中 |
+
+<!-- CODE-CALIBRATION:END -->
+
+
+
 BPMT的异步队列是指将一些耗时且实时性要求不高的任务通过后台异步进行处理,以此实现主业务流程快速响应，优化用户体验。
 
 

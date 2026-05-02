@@ -1,4 +1,26 @@
 # log 系统日志
+
+<!-- CODE-CALIBRATION:START -->
+
+## 当前代码校准
+
+来源：`bpmt-lite/platform/src/main/java/com/riversoft/platform/script/function/LoggerHelper.java`，类上标注 `@ScriptSupport("log")`。脚本中通常以 `log.方法名(...)` 调用。
+
+脚本运行日志和 Web 进度日志函数。
+
+| 函数签名 | 说明 |
+| --- | --- |
+| `debug(String msg, Object... args)` | 登记后台日志 |
+| `info(String msg, Object... args)` | 登记后台日志 |
+| `warn(String msg, Object... args)` | 登记后台日志 |
+| `error(String msg, Object... args)` | 登记后台日志 |
+| `print(String msg)` | 登记web日志 |
+| `loop(String msg, int max)` | 开始循环 |
+| `signal()` | 循环标记 |
+
+<!-- CODE-CALIBRATION:END -->
+
+
 ```
 log日志函数，主要是为了运行时记录和定位信息，用法同log4j。
 在动态脚本中添加打印跟踪信息，跟踪信息会打印在平台目录中的logs文件夹内的platform.log文件中。

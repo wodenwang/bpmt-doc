@@ -1,5 +1,38 @@
 # excel Excel操作
 
+<!-- CODE-CALIBRATION:START -->
+
+## 当前代码校准
+
+来源：`bpmt-lite/platform/src/main/java/com/riversoft/platform/script/function/ExcelHelper.java`，类上标注 `@ScriptSupport("excel")`。脚本中通常以 `excel.方法名(...)` 调用。
+
+解析 Excel 上传文件，或按模板生成 Excel 文件。
+
+| 函数签名 | 说明 |
+| --- | --- |
+| `parseSheetListWithEnd(Object file, String sheetName, String endChecker, int titleRow, String... fields)` | 解析文件-列表 |
+| `parseSheetList(Object file, String sheetName, int titleRow, String... fields)` | 解析文件-列表 |
+| `parseSheetList(Object file, String sheetName, int titleRow)` | 解析文件-列表 |
+| `parseSheetList(Object file, String sheetName, String... fields)` | 解析文件-列表 |
+| `parseSheetList(Object file, String sheetName)` | 解析文件-列表 |
+| `parseList(Object file, String... fields)` | 解析文件-列表 |
+| `parseList(Object file)` | 解析文件-列表 |
+| `parseList(Object file, int titleRow, String... fields)` | 解析文件-列表 |
+| `parseList(Object file, int titleRow)` | 解析文件-列表 |
+| `parseTitleListWhithEnd(Object file, String sheetName, String endChecker, int titleRow)` | 解析文件-按表头生成列表 |
+| `parseTitleList(Object file, int titleRow)` | 解析文件-按表头生成列表 |
+| `parseTitleList(Object file)` | 解析文件-按表头生成列表 |
+| `parseSheetTitleList(Object file, String sheetName, int titleRow)` | 解析文件-按表头生成列表 |
+| `parseSheetTitleList(Object file, String sheetName)` | 解析文件-按表头生成列表 |
+| `parseSheetMap(Object file, String sheetName, String... fields)` | 解析文件-MAP |
+| `parseMap(Object file, String... fields)` | 解析文件-MAP |
+| `toFile(Object template, String fileName, Map<String, Object> context)` | 生成文件 |
+| `toFile(Object template, Map<String, Object> context)` | 生成文件 |
+
+<!-- CODE-CALIBRATION:END -->
+
+
+
 ## 定义
 
 在BPMT中, 通过自定义函数去调用内置的函数, 可以对给定的EXCEL模板进行数据的导出, 也可对导入的EXCEL文件进行数据获取并分析.

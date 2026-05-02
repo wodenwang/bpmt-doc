@@ -99,6 +99,9 @@
 - 完整目录：`docs/SUMMARY.md`
 - 图片目录：`docs/assets/gitbook/`
 - 当前有效迁移范围：`安装部署` 与 `最佳实践` 两章已从迁移输出中移除；原 `安装部署/其他工具` 内容迁入 `docs/9.其他设置/9.4.其他工具.md`。
-- 当前迁移覆盖：78 个 Markdown 文件、329 个图片资产。
+- 当前迁移覆盖：89 个 Markdown 文件、351 个图片资产。
 - 运行事实校准页：`docs/1.开始使用/1.1.快速安装.md`。
-- 后续校准优先级：脚本函数实现、控件实现、动态表/工作流 UI、微信开发能力。
+- 模块视图校准：`docs/5.模块视图/5.3.报表视图.md` 已改为面向低代码用户的图文 SOP，截图来自本机完整库运行实例，资产为 `docs/assets/gitbook/5.模块视图/report-sop-*.png`。
+- 模块视图校准：`docs/5.模块视图/5.1.动态表视图.md` 已按报表视图写法重写为图文 SOP，示例为本机完整库中的“基础-产品表”，资产为 `docs/assets/gitbook/5.模块视图/dyn-sop-*.png`。
+- 控件章节已完成实现关系核对：`docs/7.控件开发/README.md` 记录 `Widget` 接口识别口径、`AnnotatedWidgetProcessorsHolder` 动态加载机制、`widget/{mode}` 模板清单、`doc/widget` 覆盖范围和缺页清单；已补 `editor` 页面，并确认 `img`、`icon` 等继承 `FileManagerWidget` / `DefaultWidget` 的类也是控件。
+- 后续校准优先级：脚本函数实现、控件实现中的 `doc/widget` 缺口、工作流 UI、微信开发能力。

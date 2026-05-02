@@ -1,4 +1,27 @@
 # mail 邮件操作
+
+<!-- CODE-CALIBRATION:START -->
+
+## 当前代码校准
+
+来源：`bpmt-lite/platform/src/main/java/com/riversoft/platform/mail/script/MailHelper.java`，类上标注 `@ScriptSupport("mail")`。脚本中通常以 `mail.方法名(...)` 调用。
+
+普通邮件、系统邮件和异步系统邮件发送函数。
+
+| 函数签名 | 说明 |
+| --- | --- |
+| `send(String subject, String content, byte[] attachment, String... toAddrs)` | 邮件发送 |
+| `send(String subject, String content, String... toAddrs)` | 邮件发送 |
+| `systemSend(String subject, String content, String... toAddrs)` | 系统邮件发送 |
+| `systemSend(String subject, String content, byte[] attachment, String... toAddrs)` | 系统邮件发送 |
+| `systemSend(String subject, String content, List<String> toAddrs, List<String> toCCs)` | 系统邮件发送 |
+| `systemSend(String subject, String content, byte[] attachment, List<String> toAddrs, List<String> toCCs)` | 系统邮件发送 |
+| `asyncSystemSend(String subject, String content, byte[] attachment, String... toAddrs)` | 系统邮件发送(异步) |
+| `asyncSystemSend(String subject, String content, String... toAddrs)` | 系统邮件发送(异步) |
+
+<!-- CODE-CALIBRATION:END -->
+
+
 mail函数为发送邮件函数库。
 
 ## mail.systemSend ##

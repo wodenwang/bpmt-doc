@@ -1,5 +1,42 @@
 # cm 通用函数库
 
+<!-- CODE-CALIBRATION:START -->
+
+## 当前代码校准
+
+来源：`bpmt-lite/platform/src/main/java/com/riversoft/platform/web/CommonHelper.java`，类上标注 `@ScriptSupport("cm")`。脚本中通常以 `cm.方法名(...)` 调用。
+
+页面、控件、视图、字典、请求上下文等 BPMT Web 层辅助函数。
+
+| 函数签名 | 说明 |
+| --- | --- |
+| `map(Map<String, Object> po, String tableName)` | 从request获取表动态信息 |
+| `map(String tableName)` | 从request获取表动态信息 |
+| `invoke(String key, Object... args)` | 自定义函数调用 |
+| `widget(String cmd, Object value)` | 控件翻译的EL函数调用 |
+| `widget(String cmd, Object value, Object params)` | 控件翻译的EL函数调用 动态参数,支持字符和对象 |
+| `view(String viewKey, Object value, Object params)` | 调用视图做链接 |
+| `view(String viewKey, Object value)` | 调用视图做链接 |
+| `params()` | 获取动态参数 |
+| `error(Object msg)` | 主动抛异常 |
+| `info(Object msg)` | 主动抛出提示 |
+| `warn(Object msg)` | 主动抛出警告 |
+| `db(String type, Object code)` | 字典翻译 |
+| `db(String type)` | 获取字典列表 |
+| `form(String html, Map<String, Object> params)` | 解析form控件内容 填空 |
+| `form(String html)` | 解析form控件内容 |
+| `lan(String str)` | 自适应语言 |
+| `xhtml()` | xhtml客户端(pc版) |
+| `h5()` | h5客户端(微信端) |
+| `title(String title)` | 设值标题 |
+| `title()` | 获取标题 |
+| `request()` | 获取request |
+| `session()` | 获取session |
+
+<!-- CODE-CALIBRATION:END -->
+
+
+
 BPMT专有能力配套函数库,通过本函数库可以在脚本中使用BPMT的各种基础概念,例如"动态入参","控件","视图","自定义函数"等.
 
 

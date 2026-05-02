@@ -1,5 +1,26 @@
 # seq 流水与随机数
 
+<!-- CODE-CALIBRATION:START -->
+
+## 当前代码校准
+
+来源：`bpmt-lite/platform/src/main/java/com/riversoft/platform/script/function/SequenceHelper.java`，类上标注 `@ScriptSupport("seq")`。脚本中通常以 `seq.方法名(...)` 调用。
+
+UUID、唯一字符、模式流水号和随机字符串生成函数。
+
+| 函数签名 | 说明 |
+| --- | --- |
+| `uuid()` | 获取uuid |
+| `next()` | 获取下一个唯一字符 |
+| `pattern(String code, Object... objs)` | 模式创建序列号.目前支持的模式:； 时间 {now}:yyyyMMdd； 序号{seq:u/l}:tableName,column,size； 表单传值{req}:NAME； 命令对应入参 |
+| `randomNumber(int size)` | 生成随机数字 |
+| `randomWord(int size)` | 生成随机字符 |
+| `random(int size)` | 生成随机字符+数字混合 |
+
+<!-- CODE-CALIBRATION:END -->
+
+
+
 BPMT里面特有的用于生成数据库特定流水号或者随机数的函数库;
 
 ## *seq.pattern* 模式组合创建流水号

@@ -1,4 +1,35 @@
 # fmt 格式化
+
+<!-- CODE-CALIBRATION:START -->
+
+## 当前代码校准
+
+来源：`bpmt-lite/platform/src/main/java/com/riversoft/core/script/function/FormatterFunction.java`，类上标注 `@ScriptSupport("fmt")`。脚本中通常以 `fmt.方法名(...)` 调用。
+
+日期、数字、金额、拼音、JSON 与基础类型转换函数。
+
+| 函数签名 | 说明 |
+| --- | --- |
+| `formatDate(Date date)` | 格式化日期成字符串（yyyy-MM-dd） |
+| `formatDatetime(Date date)` | 格式化日期成字符串（yyyy-MM-dd HH:mm:ss） |
+| `formatDatetime(Date date, String pattern)` | 格式化日期成自定义格式字符串 |
+| `formatChinesePrice(Number price)` | 数字格式化成大写 |
+| `formatPrice(Number price, String pattern)` | 格式化价格 |
+| `formatPrice(Number price)` | 格式化价格 |
+| `formatPercent(Number num)` | 格式化百分比 |
+| `formatNumber(Number num, String pattern)` | 格式化数字 |
+| `formatNumber(Number num)` | 格式化数字 |
+| `formatPinyin(String chinese)` | 中文格式化成拼音(首字母) |
+| `formatPinyinFull(String chinese)` | 中文转换成拼音(全拼) |
+| `formatJson(Object o)` | 对象转换成JSON |
+| `formatDuring(Long s)` | 将秒数格式化成天-小时-分-秒； 返回两段式即可,即:X天Y小时或X小时Y分钟 |
+| `toJson(Object value)` | 将字符串转换成JSON |
+| `toDate(Object value)` | 转换成日期 |
+| `toNumber(Object value)` | 转换成数字 |
+
+<!-- CODE-CALIBRATION:END -->
+
+
 fmt函数库提供各类属性格式化以及转换的函数。
 ##formatDatetime
 根据自定义规则格式化日期/时间。
