@@ -20,6 +20,8 @@
 4. 进入 `权限组管理 -> 第三方系统权限`，把对应第三方系统权限分配给允许访问的用户或角色。
 5. 把 `client_id`、`clientSecret`、回调地址和 BPMT OAuth 地址交给第三方系统维护者。
 
+BPMT 后台显示的 clientSecret，在 /oauth/token 请求中对应参数名 client_secret。
+
 OAuth 运行数据由 BPMT 自动保存。低代码用户不需要直接维护数据库表，也不需要手工处理授权码或 token 的存储。
 
 ## 登录顺序
@@ -64,7 +66,7 @@ flowchart TD
     I -->|是| K["生成一次性 code 并回跳第三方系统"]
     K --> L{"第三方系统换 token"}
     L -->|code 过期或重复使用| M["返回 invalid_grant"]
-    L -->|clientSecret 错误| N["返回 invalid_client"]
+    L -->|client_secret 错误| N["返回 invalid_client"]
     L -->|成功| O["返回 access_token"]
     O --> P{"第三方系统读取 userinfo"}
     P -->|token 过期或撤销| Q["返回 invalid_token"]
@@ -134,14 +136,14 @@ flowchart TD
 
 ## 错误码和应对建议
 
-| 错误码 | 用户可能看到 | 第三方系统应对 | BPMT 管理员检查 |
+| 错误码 | 用户应对建议 | 第三方系统应对 | BPMT 管理员检查 |
 | --- | --- | --- | --- |
-| `invalid_request` | 登录失败或参数错误提示 | 检查请求参数，特别是 `redirect_uri` 和 `response_type` | 确认回调地址配置和第三方系统文档一致 |
-| `invalid_client` | 第三方系统不可用 | 检查 `client_id`、`clientSecret` 和系统启停状态 | 确认第三方系统存在、已启用，必要时重置密钥 |
-| `invalid_grant` | 登录回调失败或需要重新登录 | 重新发起 `/oauth/authorize`，不要重复使用旧 `code` | 检查授权码是否过期、是否被重复使用 |
-| `invalid_token` | 登录态失效 | 引导用户重新走 OAuth 登录 | 检查 token 是否过期、撤销或格式错误 |
-| `unsupported_grant_type` | 第三方系统接入方式不支持 | 使用 `authorization_code` | 确认第三方系统没有使用密码模式或刷新 token |
-| `access_denied` | 当前用户无权进入第三方系统 | 给用户显示无权限提示 | 到 `权限组管理 -> 第三方系统权限` 分配权限 |
+| `invalid_request` | 重新进入第三方系统入口；如果仍失败，联系第三方系统维护者。 | 检查请求参数，特别是 `redirect_uri` 和 `response_type` | 确认回调地址配置和第三方系统文档一致 |
+| `invalid_client` | 联系第三方系统维护者确认系统是否启用。 | 检查 `client_id`、`client_secret` 和系统启停状态 | 确认第三方系统存在、已启用，必要时重置密钥 |
+| `invalid_grant` | 重新发起登录，不要刷新旧回调页。 | 重新发起 `/oauth/authorize`，不要重复使用旧 `code` | 检查授权码是否过期、是否被重复使用 |
+| `invalid_token` | 重新登录第三方系统。 | 引导用户重新走 OAuth 登录 | 检查 token 是否过期、撤销或格式错误 |
+| `unsupported_grant_type` | 联系第三方系统维护者。 | 使用 `authorization_code` | 确认第三方系统没有使用密码模式或刷新 token |
+| `access_denied` | 联系 BPMT 管理员申请第三方系统权限。 | 给用户显示无权限提示 | 到 `权限组管理 -> 第三方系统权限` 分配权限 |
 
 OAuth 错误 JSON 示例：
 
