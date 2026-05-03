@@ -34,7 +34,7 @@
 
 ## bpmt-lite 当前已知基线
 
-截至本仓初始化时，`bpmt-lite` 的仓库记忆与 README 显示：
+截至 v1.5.0 基线校准时，`bpmt-lite` 的仓库记忆与 README 显示：
 
 - 当前发布版本：`v1.5.0`
 - 默认 Web 镜像：`ghcr.io/wodenwang/bpmt-lite:1.5.0`
