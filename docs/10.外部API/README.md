@@ -69,7 +69,7 @@ SHA256_HEX(BODY)
 
 - `METHOD` 使用大写 HTTP 方法，例如 `GET`、`POST`、`PUT`。
 - `PATH` 必须包含公开 context path，例如 `/api/v1/dynamic-tables`，不能只签 `/v1/dynamic-tables`。
-- `NORMALIZED_QUERY` 按解码后的参数名和值排序，再 URL encode；无 query 时保留为空行。
+- `NORMALIZED_QUERY` 按解码后的参数名和值排序，重复参数按解码后的值排序，空格编码为 `%20` 而不是 `+`；无 query 时保留为空行。
 - `BODY` 为空时使用空字符串计算 SHA-256。
 - `appSecret` 不允许出现在 URL、query 或 request body 中。
 
@@ -294,16 +294,16 @@ POST /api/v1/dynamic-tables/{name}/ddl:sync
 | 字段 | 必填 | 说明 |
 | --- | --- | --- |
 | `sql` | 是 | SQL 文本 |
-| `params` | 否 | 位置参数数组，按 SQL 占位符顺序传入 |
+| `args` | 否 | 位置参数数组，按 SQL 占位符顺序传入 |
 
-`params` 在本文中表示 SQL 位置参数。使用本目录 `openapi.json` 生成客户端时，如果生成字段名为 `args`，语义等同于这里的 `params`，应按生成客户端的字段名传入同一个数组。
+请求体字段名是 `args`，它是 SQL 位置绑定参数数组，顺序必须与 SQL 占位符顺序一致。
 
 请求体示例：
 
 ```json
 {
   "sql": "select USERID, USER_NAME from US_USER where USERID = ?",
-  "params": ["admin"]
+  "args": ["admin"]
 }
 ```
 
