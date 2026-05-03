@@ -295,6 +295,7 @@ Include this warning:
 
 ```markdown
 `PATH` 必须包含公开 context path，例如 `/api/v1/dynamic-tables`，不能只签 `/v1/dynamic-tables`。
+`NORMALIZED_QUERY` 中重复参数按解码后的值排序，空格编码为 `%20`。
 ```
 
 - [ ] **Step 3: Add endpoint tables and parameter details**
@@ -324,7 +325,7 @@ Add parameter tables for:
 - Dynamic table request body fields: `name`, `description`, `cacheFlag`, `columns`, `indexes`.
 - Column fields: `name`, `description`, `type`, `totalSize`, `scale`, `primaryKey`, `required`.
 - Supported field types: `String`, `Integer`, `BigDecimal`, `Date`, `Long`, `Clob`, `Blob`.
-- Database operation body fields: `sql`, `params`, and operation-specific behavior for `query/find/save/exec`.
+- Database operation body fields: `sql`, `args`, and operation-specific behavior for `query/find/save/exec`.
 
 - [ ] **Step 4: Add curl signing example**
 
