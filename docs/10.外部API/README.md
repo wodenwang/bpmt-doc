@@ -2,7 +2,7 @@
 
 ## 适用版本
 
-本章适用于 `bpmt-lite v1.4.1` 新增、并在 `bpmt-lite v1.5.0` 继续可用的外部业务 API。
+本章适用于 `bpmt-lite v1.4.1` 新增、并在 `bpmt-lite v1.6.2` 继续可用的外部业务 API。
 
 机器可读接口快照已归档为本目录下的 `openapi.json`。人工阅读时以本文为入口，集成工具生成客户端时优先读取 `docs/10.外部API/openapi.json`。
 

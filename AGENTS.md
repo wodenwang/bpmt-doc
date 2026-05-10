@@ -18,7 +18,7 @@
 
 1. 本仓 `AGENTS.md`
 2. `bpmt-lite` 仓库的 `AGENTS.md`
-3. `bpmt-lite` 仓库的 `README.md`、`docs/v1.5.0/*`、`docs/v1.4.1/*`、`docs/v1.4.0/*`、`docs/v1.3.0/*`、`docs/maintenance.md`
+3. `bpmt-lite` 仓库的 `README.md`、`docs/release-v1.6.2.md`、`docs/v1.6.1/*`、`docs/v1.6.0/*`、`docs/v1.5.0/*`、`docs/v1.4.1/*`、`docs/v1.4.0/*`、`docs/v1.3.0/*`、`docs/maintenance.md`
 4. `bpmt-lite` 实现代码、配置、脚本和数据库文件
 5. 旧 GitBook 文档目录
 
@@ -34,12 +34,13 @@
 
 ## bpmt-lite 当前已知基线
 
-截至 v1.5.0 基线校准时，`bpmt-lite` 的仓库记忆与 README 显示：
+截至 v1.6.2 基线校准时，`bpmt-lite` 的仓库记忆与 README 显示：
 
-- 当前发布版本：`v1.5.0`
-- 默认 Web 镜像：`ghcr.io/wodenwang/bpmt-lite:1.5.0`
-- 默认 API 镜像：`ghcr.io/wodenwang/bpmt-lite-api:1.5.0`
+- 当前发布版本：`v1.6.2`
+- 默认 Web 镜像：`ghcr.io/wodenwang/bpmt-lite:1.6.2`
+- 默认 API 镜像：`ghcr.io/wodenwang/bpmt-lite-api:1.6.2`
 - 默认访问地址：`http://127.0.0.1/`
+- HTTPS 访问地址：`https://127.0.0.1/`，需要 `BPMT_HTTPS_ENABLED=1`
 - API 文档地址：`http://127.0.0.1/api/docs/`
 - OpenAPI 地址：`http://127.0.0.1/api/openapi.json`
 - 默认登录账号：`admin/admin`
@@ -47,6 +48,9 @@
 - 最小数据库：`bpmt_min`
 - 最小库初始化后约 176 张表
 - 完整库初始化后约 380 张表
+- 微信生态第三方 OAuth 登录：默认关闭，按第三方系统配置启用
+- 默认安装路径：`install.sh` 创建运行目录并默认初始化完整库
+- 升级路径：运行目录内 `sh ./upgrade.sh`，状态记录在 `.bpmt-lite/`
 - 技术栈：Java 8、Maven 3、Tomcat 7、MariaDB、nginx
 
 这些信息会随 `bpmt-lite` 后续版本变化。每次更新本文档前，应先重新读取 `bpmt-lite/AGENTS.md` 和 `bpmt-lite/README.md`。
@@ -107,5 +111,5 @@
 - 模块视图校准：`docs/5.模块视图/5.1.动态表视图.md` 已按报表视图写法重写为图文 SOP，示例为本机完整库中的“基础-产品表”，资产为 `docs/assets/gitbook/5.模块视图/dyn-sop-*.png`。
 - 控件章节已完成实现关系核对：`docs/7.控件开发/README.md` 记录 `Widget` 接口识别口径、`AnnotatedWidgetProcessorsHolder` 动态加载机制、`widget/{mode}` 模板清单、`doc/widget` 覆盖范围和缺页清单；已补 `editor` 页面，并确认 `img`、`icon` 等继承 `FileManagerWidget` / `DefaultWidget` 的类也是控件。
 - 外部 API 章节规划：新增 `docs/10.外部API/README.md` 和 `docs/10.外部API/openapi.json`，以 `bpmt-lite/docs/v1.4.1/api-reference.md` 与 `openapi.json` 为事实来源，面向低代码用户和集成系统独立落地。
-- OAuth 第三方登录章节规划：新增 `docs/11.OAuth第三方登录/README.md`，以 `bpmt-lite/docs/v1.5.0/oauth-login-reference.md` 为事实来源，使用流程图说明登录顺序、鉴权情况、错误码和应对建议，不展开底层表结构。
+- OAuth 第三方登录章节已按 `v1.6.2` 校准：`docs/11.OAuth第三方登录/README.md` 以 `bpmt-lite/README.md`、`docs/release-v1.6.2.md`、`docs/v1.6.1/wechat-oauth-thirdpart-acceptance.md`、`database/v1.6.1-wechat-oauth-thirdpart.sql` 和 `platform` 中实际 OAuth/微信登录实现为事实来源，补充了微信生态登录分支、配置项、升级要求、无权限提示、错误码和时序图。
 - 后续校准优先级：脚本函数实现、控件实现中的 `doc/widget` 缺口、工作流 UI、微信开发能力。
