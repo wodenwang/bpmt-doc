@@ -1,6 +1,6 @@
 # bpmt-doc
 
-`bpmt-doc` 是 BPMT 的 Markdown-first 中文文档库。当前文档结构直接沿用旧 GitBook 章节层级，并用 `bpmt-lite v1.6.2` 校准快速启动、数据库、登录、外部 API 和 OAuth 第三方登录说明。
+`bpmt-doc` 是 BPMT 的 Markdown-first 中文文档库。当前文档结构直接沿用旧 GitBook 章节层级，并用 `bpmt-lite v1.7.2` 校准快速启动、数据库、登录、外部 API 和 OAuth 第三方登录说明。
 
 ## 从哪里开始
 
@@ -12,9 +12,9 @@
 
 ## 当前运行基线
 
-- 当前版本：`v1.6.2`
-- 默认 Web 镜像：`ghcr.io/wodenwang/bpmt-lite:1.6.2`
-- 默认 API 镜像：`ghcr.io/wodenwang/bpmt-lite-api:1.6.2`
+- 当前版本：`v1.7.2`
+- 默认 Web 镜像：`ghcr.io/wodenwang/bpmt-lite:1.7.2`
+- 默认 API 镜像：`ghcr.io/wodenwang/bpmt-lite-api:1.7.2`
 - 默认地址：`http://127.0.0.1/`
 - API 文档：`http://127.0.0.1/api/docs/`
 - OpenAPI：`http://127.0.0.1/api/openapi.json`
